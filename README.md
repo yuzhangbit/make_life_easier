@@ -2,7 +2,7 @@
 various useful scripts to make life easier.
 
 | Item | Version  |  
-| ------ |: ------ :|  
+| ------ | ------ |  
 | System | Ubuntu 16.04 LTS |  
 | ROS    | Kinetic     |  
 
