@@ -1,7 +1,7 @@
 # make_life_easier
 various useful scripts to make life easier.
 
-|  | Version  |
+| Item | Version  |
 | --- |: --- :|
 | System | Ubuntu 16.04 LTS |
 | ROS    | Kinetic     |
