@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e  # exit on first error
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 APP_NAME="v2ray_client"
 CONF_DIR="/etc/supervisor/conf.d"  # supervisor configuration file directory
@@ -12,7 +12,7 @@ main()
 
 create_config_for_app()
 {
-    cd $SCRIPT_DIR
+    cd $CURRENT_DIR
     ## create supervisor configuration file for the app
     touch "$CONF"
     # write lines

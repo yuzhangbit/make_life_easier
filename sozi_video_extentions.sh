@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e  # exit on first error
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR="/tmp"
 VERSION="18.04-1523042682"
 EXT_NAME="Sozi-extras-media-${VERSION}"
