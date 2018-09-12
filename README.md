@@ -1,9 +1,10 @@
 # make_life_easier
 various useful scripts to make life easier.
-| Tables | Values  |
-| ------ | ------- |
+
+|  | Version  |
+| --- |: --- :|
 | System | Ubuntu 16.04 LTS |
-| ROS    | Kinetic     | 
+| ROS    | Kinetic     |
 
 * Use the mirror of BIT for apt-get update
 ```
