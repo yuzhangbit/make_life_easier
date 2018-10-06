@@ -6,8 +6,8 @@ UBUNTU_CODENAME=$(lsb_release -sc)
 
 main()
 {
-    #install_dependencies
-    #install_libQtSSR 
+    install_dependencies
+    install_libQtSSR 
     install_qt5gui
 }
 
