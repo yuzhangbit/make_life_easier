@@ -10,11 +10,10 @@ ROS2_VERSION="bouncy"
 
 main()
 {
- set_utf8_locale
- set_ros2_apt_repo
- install_dev_tools
- create_ws_and_source_codes
- install_colcon
+ #set_utf8_locale
+ #set_ros2_apt_repo
+ #install_dev_tools
+ #create_ws_and_source_codes
  install_dependencies
 }
 
@@ -87,19 +86,10 @@ create_ws_and_source_codes()
  vcs import src < ros2.repos
 }
 
-install_colcon()
-{
- echo "Installing colcon build tool ........"
- sudo sh -c 'echo "deb [arch=amd64,arm64] http://repo.ros2.org/ubuntu/main `lsb_release -cs` main" > /etc/apt/sources.list.d/ros2-latest.list'
- curl http://repo.ros2.org/repos.key | sudo apt-key add -
- sudo apt update
- sudo apt install python3-colcon-common-extensions
-}
-
 install_dependencies()
 {
  echo "Installing ROS dependencies....."
- sudo rosdep init
+ #sudo rosdep init
  rosdep update
  rosdep install --from-paths src --ignore-src --rosdistro bouncy -y --skip-keys "console_bridge fastcdr fastrtps libopensplice67 rti-connext-dds-5.3.1 urdfdom_headers"
 }
