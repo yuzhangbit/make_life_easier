@@ -23,7 +23,7 @@ install_botan2()
     rm -rf botan 
     git clone --depth 1 --single-branch -b 2.8.0 https://github.com/randombit/botan.git
     cd botan 
-    ./configure.py --prefix=/usr/local
+    ./configure.py --prefix=/usr/local --without-documentation
     make -j$(nproc)
     sudo make install 
     cd ..
@@ -35,7 +35,7 @@ install_libQtSSR()
     install_botan2
     echo "Installing libQtShadowsocks......."
     cd /tmp 
-    rm -rf 
+    rm -rf libQtShadowsocks
     git clone --depth 1 --single-branch -b v2.1.0  https://github.com/shadowsocks/libQtShadowsocks.git
     cd libQtShadowsocks
     mkdir -p build && cd build
