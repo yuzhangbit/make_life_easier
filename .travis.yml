@@ -1,0 +1,49 @@
+  sudo: required
+
+services:
+  - docker
+
+# show correct language tag in Travis CI build
+language: cpp
+
+env:
+  matrix:
+    - SCRIPT_NAME: install_google_benchmark.sh
+      WITH_ROS: false    ## use ubuntu docker image from docker hub
+    - SCRIPT_NAME: install_protobuf.sh
+      WITH_ROS: false
+    - SCRIPT_NAME: install_ssr_qt_gui.sh
+      WITH_ROS: false
+    - SCRIPT_NAME: v2ray_supervisor_setup.sh
+      WITH_ROS: false
+    - SCRIPT_NAME: install_winfonts.sh
+      WITH_ROS: false
+
+before_install:
+  # this cmd will run docker, and copy the contents of the repo root directory to /home/ivrcscripts folder
+  # get the docker running
+  - if [ $WITH_ROS == 'false' ]; then
+      docker run -d -it --name ci_xenial -v $(pwd):/home/make_life_easier aragdoll/docker_ubuntu:xenial;
+    else
+      docker run -d -it --name ci_xenial_ros -v $(pwd):/home/make_life_easier aragdoll/docker_ubuntu:xenial_ros_kinetic;
+    fi
+
+install:
+  - if [ $WITH_ROS == 'false' ]; then
+      docker exec -it ci_xenial /bin/bash -c "/home/make_life_easier/installers/$SCRIPT_NAME";
+    else
+      docker exec -it ci_xenial_ros /bin/bash -c "/home/make_life_easier/installers/$SCRIPT_NAME";
+    fi
+
+script:
+  - if [ $WITH_ROS == 'false' ]; then
+      docker exec -it ci_xenial /bin/bash -c "echo 'Xenial without ROS CI is working!'";
+    else
+      docker exec -it ci_xenial_ros /bin/bash -c "echo 'Xenial with ROS CI is working!'";
+    fi
+
+
+
+
+notifications:
+    email: false
