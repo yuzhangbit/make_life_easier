@@ -2,7 +2,8 @@
 set -e  # exit on first error
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 UBUNTU_CODENAME=$(lsb_release -sc)
-VERSION="3.6.1"
+VERSION="3.3.0"
+LANG="cpp"  # any of  all,cpp,  java, csharp, ruby, python
 main()
 {
     install_dependencies
@@ -19,9 +20,9 @@ install_protobuf()
 {
     echo "Installing protobuf....."
     cd /tmp
-    rm -rf protobuf-all-${VERSION}.tar.gz
-    wget https://github.com/google/protobuf/releases/download/v${VERSION}/protobuf-all-${VERSION}.tar.gz
-    tar xzf protobuf-all-${VERSION}.tar.gz
+    rm -rf protobuf-${LANG}-${VERSION}.tar.gz
+    wget https://github.com/protocolbuffers/protobuf/releases/download/v${VERSION}/protobuf-${LANG}-${VERSION}.tar.gz
+    tar xzf protobuf-${LANG}-${VERSION}.tar.gz
     cd protobuf-${VERSION}
     ./autogen.sh
     # Our policy is install into /usr/local; and don't install into /usr.
@@ -32,11 +33,14 @@ install_protobuf()
     # /usr/local/include
     # A whole bunch of libraries of ROS depend on libprotobuf-dev that comes with
     # the system.  Be careful with the installation directory
-    ./configure --with-pic  # default is /usr/local
+    ./configure --prefix=/usr/local CC=/usr/bin/gcc --with-pic  # default is /usr/local
     make -j4
     sudo make install
+    # Some of the headers won't be installed by default using configure script, we do it manually
+    cd src/google/protobuf/stubs && sudo cp -r *.h /usr/local/include/google/protobuf/stubs/ && cd -
+    cd ..
     sudo ldconfig
-    rm -rf protobuf-all-${VERSION}.tar.gz
+    rm -rf protobuf-${LANG}-${VERSION}.tar.gz
     echo "protobuf version ${VERSION} installed."
 }
 

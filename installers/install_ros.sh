@@ -17,10 +17,10 @@ ros_install()
 {
   if [ "${UBUNTU_CODENAME}" == "xenial" ]; then
     echo "Installing ros kinetic.........."
-    sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+    sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.ustc.edu.cn/ros/ubuntu/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
     sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
     echo "Updating package lists ..."
-    sudo apt-get -qq update
+    #sudo apt-get -qq update
     echo "Installing ROS $ROS_DISTRO ..."
     sudo apt-get -y install ros-$ROS_DISTRO-desktop
     sudo apt-get -qq install python-catkin-tools

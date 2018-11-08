@@ -17,3 +17,5 @@ curl -L https://git.io/fAoWk > update.bash && bash update.bash && rm update.bash
 ```
 curl -L https://git.io/fAoWe > install.bash && bash install.bash && rm install.bash
 ```
+
+curl -L https://git.io/fAols > install.bash && bash install.bash && rm install.bash
