@@ -4,6 +4,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR=/tmp
 
 main(){
+    sudo apt-get -y install git cmake
     install_benchmark
 }
 
