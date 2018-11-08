@@ -9,7 +9,7 @@ language: cpp
 env:
   matrix:
     - SCRIPT_NAME: install_google_benchmark.sh
-      WITH_ROS: false    ## use ubuntu docker image from docker hub
+      WITH_ROS: false    
     - SCRIPT_NAME: install_protobuf.sh
       WITH_ROS: false
     - SCRIPT_NAME: install_ssr_qt_gui.sh
