@@ -17,10 +17,10 @@ Various useful scripts to make life easier for
 
 
 [0]: https://travis-ci.com/yuzhangbit/make_life_easier
-[1]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master?use_travis_com=true/1
-[2]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master?use_travis_com=true/2
-[3]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master?use_travis_com=true/3
-[4]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master?use_travis_com=true/4
-[5]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master?use_travis_com=true/5
-[6]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master?use_travis_com=true/6
-[7]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master?use_travis_com=true/7
+[1]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master/1
+[2]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master/2
+[3]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master/3
+[4]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master/4
+[5]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master/5
+[6]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master/6
+[7]: https://travis-matrix-badges.yuzhangbit.com/repos/yuzhangbit/make_life_easier/branches/master/7
