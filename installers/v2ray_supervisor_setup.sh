@@ -7,6 +7,7 @@ CONF_DIR="/etc/supervisor/conf.d"  # supervisor configuration file directory
 CONF="$APP_NAME.conf"
 main()
 {
+    install_dependencies
     create_config_for_app
 }
 
