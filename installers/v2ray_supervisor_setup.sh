@@ -26,13 +26,14 @@ create_config_for_app()
     echo "command = /usr/bin/v2ray/v2ray -config /etc/v2ray/config.json" >> $CONF
     echo "autostart = true" >> $CONF
     echo "autorestart = true" >> $CONF
+    echo "user=root" >> $CONF
     echo "stderr_logfile = /var/log/$APP_NAME.err.log" >> $CONF
     echo "stdout_logfile = /var/log/$APP_NAME.out.log" >> $CONF
     # change the permission of the file
     sudo chmod a+x $CONF
     # enable the app in supervisor
     sudo mv $CONF $CONF_DIR
-    # read the supervisor configuration file
+        # read the supervisor configuration file
     sudo supervisorctl reread
     # update the programs run by the supervisor
     sudo supervisorctl update
