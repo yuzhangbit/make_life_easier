@@ -36,6 +36,8 @@ enable_supervisor_web_interface()
         sudo sh -c "echo '[inet_http_server]' >> /etc/supervisor/supervisord.conf"
         sudo sh -c 'echo "port = 127.0.0.1:9001" >> /etc/supervisor/supervisord.conf'
     fi
+    sudo supervisord -c /etc/supervisor/supervisord.conf
+    sudo supervisorctl -c /etc/supervisor/supervisord.conf
     sudo supervisorctl reread
     sudo supervisorctl update
 }
