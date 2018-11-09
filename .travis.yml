@@ -8,15 +8,15 @@ language: cpp
 
 env:
   matrix:
-    - SCRIPT_NAME: install_google_benchmark.sh
+    - NAME: install_google_benchmark.sh
       WITH_ROS: false
-    - SCRIPT_NAME: install_protobuf.sh
+    - NAME: install_protobuf.sh
       WITH_ROS: false
-    - SCRIPT_NAME: install_ssr_qt_gui.sh
+    - NAME: install_ssr_qt_gui.sh
       WITH_ROS: false
-    - SCRIPT_NAME: v2ray_supervisor_setup.sh
+    - NAME: v2ray_supervisor_setup.sh
       WITH_ROS: false
-    - SCRIPT_NAME: install_winfonts.sh
+    - NAME: install_winfonts.sh
       WITH_ROS: false
 
 before_install:
@@ -30,9 +30,9 @@ before_install:
 
 install:
   - if [ $WITH_ROS == 'false' ]; then
-      docker exec -it ci_xenial /bin/bash -c "/home/make_life_easier/installers/$SCRIPT_NAME";
+      docker exec -it ci_xenial /bin/bash -c "/home/make_life_easier/installers/$NAME";
     else
-      docker exec -it ci_xenial_ros /bin/bash -c "/home/make_life_easier/installers/$SCRIPT_NAME";
+      docker exec -it ci_xenial_ros /bin/bash -c "/home/make_life_easier/installers/$NAME";
     fi
 
 script:
