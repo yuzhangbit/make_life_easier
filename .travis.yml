@@ -22,6 +22,8 @@ env:
       WITH_ROS: false
     - NAME: install_ros.sh
       WITH_ROS: false
+    - NAME: install_kindr.sh
+      WITH_ROS: false
 
 before_install:
   # this cmd will run docker, and copy the contents of the repo root directory to /home/ivrcscripts folder
