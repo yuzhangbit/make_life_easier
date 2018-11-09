@@ -14,7 +14,7 @@ Various useful scripts to make life easier for
 | `install_winfonts.sh`    | [![job5][5]][0]  | -- | latest |
 | `update_bit_source_list.sh`    | [![job6][6]][0]  | BIT campus network | Ubuntu 16.04 |
 | `install_ros.sh`    | [![job7][7]][0]  | -- | kinetic |
-| `install_kindr.sh`    | [![job8][8]][0]  | -- | kinetic |
+| `install_kindr.sh`    | [![job8][8]][0]  | -- | 1.1.2 |
 
 
 [0]: https://travis-ci.org/yuzhangbit/make_life_easier
