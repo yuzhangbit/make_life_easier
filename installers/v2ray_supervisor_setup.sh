@@ -10,6 +10,10 @@ main()
     create_config_for_app
 }
 
+install_dependencies(){
+    sudo apt-get update && sudo apt-get -y install supervisor
+}
+
 create_config_for_app()
 {
     cd $CURRENT_DIR
@@ -26,7 +30,7 @@ create_config_for_app()
     # change the permission of the file
     sudo chmod a+x $CONF
     # enable the app in supervisor
-    sudo mv $CONF $CONF_DIR
+    sudo mkdir -p $CONF_DIR && sudo mv $CONF $CONF_DIR
     # read the supervisor configuration file
     sudo supervisorctl reread
     # update the programs run by the supervisor
