@@ -8,12 +8,38 @@ CONF="$APP_NAME.conf"
 main()
 {
     install_dependencies
-    create_config_for_app
+    enable_supervisor_web_interface
+    #create_config_for_app
 }
 
 install_dependencies(){
     sudo apt-get update && sudo apt-get -y install supervisor
 }
+
+enable_supervisor_web_interface()
+{
+    # enable the web gui interface
+    if ( grep -Fxq "[inet_http_server]" /etc/supervisor/supervisord.conf ); then
+        # if find "inet_http_server" in the supervisord.conf
+        echo "Found web gui configuration."
+        if ( grep "port" /etc/supervisor/supervisord.conf ); then
+            echo "port found"
+            sudo sed -i '/port /c\port = 127.0.0.1:9001' /etc/supervisor/supervisord.conf
+        else
+            # port not found
+            echo "port not found"
+            sudo sh -c 'echo "port = 127.0.0.1:9001" >> /etc/supervisor/supervisord.conf'
+        fi
+
+    else
+        # can not find the configuration for the web app
+        sudo sh -c "echo '[inet_http_server]' >> /etc/supervisor/supervisord.conf"
+        sudo sh -c 'echo "port = 127.0.0.1:9001" >> /etc/supervisor/supervisord.conf'
+    fi
+    sudo supervisorctl reread
+    sudo supervisorctl update
+}
+
 
 create_config_for_app()
 {
