@@ -10,7 +10,7 @@ various useful scripts to make life easier.
 
 
 | scripts | status  | dependencies |
-| ------ | ------ | ------ |
+| ------ | ------ | :------: |
 | `install_google_benchmark.sh` | [![job1][1]][0] | -- |
 | `install_protobuf.sh`    | [![job2][2]][0]  |  -- |
 | `install_ssr_qt_gui.sh`    | [![job3][3]][0]  | -- |
