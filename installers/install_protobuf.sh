@@ -12,7 +12,7 @@ main()
 
 install_dependencies()
 {
-    sudo apt-get -y install autoconf automake libtool curl make g++ unzip
+    sudo apt-get update && sudo apt-get -y install autoconf automake libtool curl make g++ unzip
 }
 
 

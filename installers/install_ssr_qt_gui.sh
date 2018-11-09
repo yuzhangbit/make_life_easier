@@ -7,34 +7,34 @@ UBUNTU_CODENAME=$(lsb_release -sc)
 main()
 {
     install_dependencies
-    install_libQtSSR 
+    install_libQtSSR
     install_qt5gui
 }
 
-install_dependencies() 
+install_dependencies()
 {
-    sudo apt -y install libqrencode-dev libzbar-dev libappindicator1
+    sudo apt-get update && sudo apt -y install libqrencode-dev libzbar-dev libappindicator1
 }
 
 install_botan2()
 {
     echo "Installing botan ..........."
-    cd /tmp 
-    rm -rf botan 
+    cd /tmp
+    rm -rf botan
     git clone --depth 1 --single-branch -b 2.8.0 https://github.com/randombit/botan.git
-    cd botan 
+    cd botan
     ./configure.py --prefix=/usr/local --without-documentation
     make -j$(nproc)
-    sudo make install 
+    sudo make install
     cd ..
     rm -rf botan
 }
 
-install_libQtSSR() 
+install_libQtSSR()
 {
     install_botan2
     echo "Installing libQtShadowsocks......."
-    cd /tmp 
+    cd /tmp
     rm -rf libQtShadowsocks
     git clone --depth 1 --single-branch -b v2.1.0  https://github.com/shadowsocks/libQtShadowsocks.git
     cd libQtShadowsocks
@@ -50,10 +50,10 @@ install_libQtSSR()
 install_qt5gui()
 {
     echo "Installing Qt5Gui for SSR......"
-    cd /tmp 
-    rm -rf shadowsocks-qt5 
+    cd /tmp
+    rm -rf shadowsocks-qt5
     git clone --depth 1 --single-branch -b v3.0.1 https://github.com/shadowsocks/shadowsocks-qt5.git
-    cd shadowsocks-qt5 
+    cd shadowsocks-qt5
     mkdir -p build && cd build
     cmake .. -DCMAKE_INSTALL_PREFIX=/usr
     make -j$(nproc)

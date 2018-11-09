@@ -4,7 +4,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DIR=/tmp
 
 main(){
-    sudo apt-get update && sudo apt-get -y install git cmake
+    sudo apt-get update && sudo apt-get -y install git cmake build-essential gcc g++
     install_benchmark
 }
 
