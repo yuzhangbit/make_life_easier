@@ -33,7 +33,9 @@ create_config_for_app()
     sudo chmod a+x $CONF
     # enable the app in supervisor
     sudo mv $CONF $CONF_DIR
-        # read the supervisor configuration file
+    sudo supervisord -c /etc/supervisor/supervisord.conf
+    sudo supervisorctl -c /etc/supervisor/supervisord.conf
+    # read the supervisor configuration file
     sudo supervisorctl reread
     # update the programs run by the supervisor
     sudo supervisorctl update

@@ -5,7 +5,7 @@ Various useful scripts to make life easier for
 * `ros-kinetic`
 
 
-| scripts | status  | dependencies | version |
+| installers | status  | dependencies | version |
 | ------ | ------ | :------: | :-------: |
 | `install_google_benchmark.sh` | [![job1][1]][0] | -- | latest |
 | `install_protobuf.sh`    | [![job2][2]][0]  |  -- | 3.3.0 |

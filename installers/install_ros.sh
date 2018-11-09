@@ -22,6 +22,7 @@ ros_install()
     echo "Updating package lists ..."
     #sudo apt-get -qq update
     echo "Installing ROS $ROS_DISTRO ..."
+    sudo apt-get update
     sudo apt-get -y install ros-$ROS_DISTRO-desktop
     sudo apt-get -qq install python-catkin-tools
     sudo apt-get -qq install ros-$ROS_DISTRO-catkin
