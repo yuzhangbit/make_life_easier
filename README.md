@@ -16,7 +16,7 @@ Various useful scripts to make life easier for
 | `install_ros.sh`    | [![job7][7]][0]  | -- | kinetic |
 
 
-[0]: https://travis-ci.com/yuzhangbit/make_life_easier
+[0]: https://travis-ci.org/yuzhangbit/make_life_easier
 [1]: https://travis-matrix-badges.herokuapp.com/repos/yuzhangbit/make_life_easier/branches/master/1
 [2]: https://travis-matrix-badges.herokuapp.com/repos/yuzhangbit/make_life_easier/branches/master/2
 [3]: https://travis-matrix-badges.herokuapp.com/repos/yuzhangbit/make_life_easier/branches/master/3
