@@ -8,7 +8,7 @@ CONF="$APP_NAME.conf"
 main()
 {
     install_dependencies
-    enable_supervisor_web_interface
+    #enable_supervisor_web_interface
     #create_config_for_app
 }
 
@@ -36,8 +36,6 @@ enable_supervisor_web_interface()
         sudo sh -c "echo '[inet_http_server]' >> /etc/supervisor/supervisord.conf"
         sudo sh -c 'echo "port = 127.0.0.1:9001" >> /etc/supervisor/supervisord.conf'
     fi
-    sudo supervisord -c /etc/supervisor/supervisord.conf &
-    sudo supervisorctl -c /etc/supervisor/supervisord.conf &
     sudo supervisorctl reread
     sudo supervisorctl update
 }
@@ -61,8 +59,6 @@ create_config_for_app()
     sudo chmod a+x $CONF
     # enable the app in supervisor
     sudo mv $CONF $CONF_DIR
-    sudo supervisord -c /etc/supervisor/supervisord.conf
-    sudo supervisorctl -c /etc/supervisor/supervisord.conf
     # read the supervisor configuration file
     sudo supervisorctl reread
     # update the programs run by the supervisor
