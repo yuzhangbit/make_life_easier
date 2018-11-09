@@ -22,4 +22,4 @@ https://travis-matrix-badges.herokuapp.com/repos/${repo_owner}/${repo_name}/bran
 [2]: https://travis-matrix-badges.herokuapp.com/repos/yuzhangbit/make_life_easier/branches/master/2
 [3]: https://travis-matrix-badges.herokuapp.com/repos/yuzhangbit/make_life_easier/branches/master/3
 [4]: https://travis-matrix-badges.herokuapp.com/repos/yuzhangbit/make_life_easier/branches/master/4
-[5]: https://travis-ci.org/yuzhangbit/make_life_easier
+[5]: https://travis-ci.com/yuzhangbit/make_life_easier
