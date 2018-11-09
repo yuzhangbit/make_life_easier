@@ -13,7 +13,7 @@ main()
 
 install_dependencies()
 {
-    sudo apt-get update && sudo apt -y install libqrencode-dev libzbar-dev libappindicator1 cmake build-essential gcc g++
+    sudo apt-get update && sudo apt-get -y install libqrencode-dev libzbar-dev libappindicator1 cmake build-essential gcc g++
 }
 
 install_botan2()
