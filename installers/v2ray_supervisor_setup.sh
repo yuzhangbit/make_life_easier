@@ -8,8 +8,8 @@ CONF="$APP_NAME.conf"
 main()
 {
     install_dependencies
-    #enable_supervisor_web_interface
-    #create_config_for_app
+    enable_supervisor_web_interface
+    create_config_for_app
 }
 
 install_dependencies(){
