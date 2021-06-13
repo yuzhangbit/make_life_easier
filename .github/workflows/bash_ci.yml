@@ -5,8 +5,10 @@ jobs:
     runs-on: ubuntu-latest  # ubuntu 20.04
     steps:
       - name: install dependencies
+        shell: bash
         run: |
           echo "${GITHUB_WORKSPACE}"
+          ./installers/install_acados.sh
       - run: pwd
       - run: ls
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
