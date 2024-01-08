@@ -1,0 +1,1 @@
+sudo apt install -y git cmake curl wget proxychains ssh axel mlocate
